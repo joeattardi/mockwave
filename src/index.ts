@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 
@@ -19,10 +20,18 @@ async function start() {
     console.log(`\nProxy target: ${chalk.bold(options.target)}`);
 
     const server = createServer(options.target);
-    await server.listen({
-        port: options.port
-    });
-    console.log(chalk.greenBright(`\nReady for API requests on port ${chalk.bold(options.port)}.`));
+
+    try {
+        await server.listen({
+            port: options.port
+        });
+        console.log(chalk.greenBright(`\n>> Ready for API requests on port ${chalk.bold(options.port)}.`));
+    } catch (error: any) {
+        if (error.code === 'EADDRINUSE') {
+            console.error(chalk.redBright(`⚠️  Port ${chalk.bold(options.port)} is already in use.`));
+            process.exit(1);
+        }
+    }
 
     process.on('SIGINT', async () => {
         console.log('\n\nShutting down server...');

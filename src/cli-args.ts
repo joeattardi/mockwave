@@ -21,6 +21,7 @@ program
     .version(packageInfo.version)
     .requiredOption('-t, --target <target>', 'The proxy target URL.')
     .option('-p, --port <port>', 'The port to listen on.', parsePort, 8000)
+    .argument('<mockfile>', 'The mock definition file to use.')
 
 program.parse();
 const options = program.opts();
