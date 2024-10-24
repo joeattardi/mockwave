@@ -31,6 +31,9 @@ async function start() {
             console.error(chalk.redBright(`⚠️  Port ${chalk.bold(options.port)} is already in use.`));
             process.exit(1);
         }
+
+        console.error(error);
+        process.exit(1);
     }
 
     process.on('SIGINT', async () => {
