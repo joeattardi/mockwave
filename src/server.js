@@ -1,7 +1,7 @@
 import Fastify from 'fastify';
 import proxy from '@fastify/http-proxy';
 
-export function createServer(proxyTarget: string) {
+export function createServer(proxyTarget) {
     const server = Fastify();
 
     server.register(proxy, {

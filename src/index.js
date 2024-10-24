@@ -6,11 +6,11 @@ import { resolve } from 'path';
 import figlet from 'figlet';
 import chalk from 'chalk';
 
-import { mocks, options } from './cli-args';
-import { createServer } from './server';
-import { loadMocks } from './mocks';
+import { mocks, options } from './cli-args.js';
+import { createServer } from './server.js';
+import { loadMocks } from './mocks.js';
 
-const packagePath = resolve(__dirname, '../package.json');
+const packagePath = resolve(import.meta.dirname, '../package.json');
 const packageInfo = JSON.parse(readFileSync(packagePath, 'utf-8'));
 
 async function start() {
@@ -29,7 +29,7 @@ async function start() {
             port: options.port
         });
         console.log(chalk.greenBright(`\n>> Ready for API requests on port ${chalk.bold(options.port)}.`));
-    } catch (error: any) {
+    } catch (error) {
         if (error.code === 'EADDRINUSE') {
             console.error(chalk.redBright(`⚠️  Port ${chalk.bold(options.port)} is already in use.`));
             process.exit(1);

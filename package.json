@@ -6,21 +6,18 @@
     "node": ">=20.6.0"
   },
   "main": "index.js",
+  "type": "module",
   "bin": {
-    "mockwave": "dist/index.js"
+    "mockwave": "src/index.js"
   },
   "scripts": {
-    "build": "tsc",
-    "dev": "node -r ts-node/register src/index.ts"
   },
   "keywords": [],
   "author": "Joe Attardi <jattardi@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@types/figlet": "^1.7.0",
-    "@types/node": "^22.7.9",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
+    "@types/node": "^22.7.9"
   },
   "dependencies": {
     "@fastify/http-proxy": "^10.0.1",
