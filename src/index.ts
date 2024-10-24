@@ -6,8 +6,9 @@ import { resolve } from 'path';
 import figlet from 'figlet';
 import chalk from 'chalk';
 
-import { options } from './cli-args';
+import { mocks, options } from './cli-args';
 import { createServer } from './server';
+import { loadMocks } from './mocks';
 
 const packagePath = resolve(__dirname, '../package.json');
 const packageInfo = JSON.parse(readFileSync(packagePath, 'utf-8'));
@@ -20,6 +21,8 @@ async function start() {
     console.log(`\nProxy target: ${chalk.bold(options.target)}`);
 
     const server = createServer(options.target);
+
+    await loadMocks(server, mocks);
 
     try {
         await server.listen({
