@@ -1,0 +1,32 @@
+{
+  "name": "mockwave",
+  "version": "1.0.0",
+  "description": "API proxy with mocking support",
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "main": "index.js",
+  "bin": {
+    "mockwave": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "node -r ts-node/register src/index.ts"
+  },
+  "keywords": [],
+  "author": "Joe Attardi <jattardi@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/figlet": "^1.7.0",
+    "@types/node": "^22.7.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@fastify/http-proxy": "^10.0.1",
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "fastify": "^5.0.0",
+    "figlet": "^1.8.0"
+  }
+}
