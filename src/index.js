@@ -18,11 +18,11 @@ async function start() {
     console.log('Mockwave API proxy');
     console.log(`Version ${packageInfo.version}`);
 
-    console.log(`\nProxy target: ${chalk.bold(options.target)}`);
-
     const server = createServer(options.target);
 
     await loadMocks(server, mocks);
+
+    console.log(`\nAll other routes proxied to target:\n${chalk.bold(options.target)}`);
 
     try {
         await server.listen({
