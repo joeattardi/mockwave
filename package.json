@@ -1,6 +1,6 @@
 {
   "name": "mockwave",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "API proxy with mocking support",
   "engines": {
     "node": ">=20.6.0"
@@ -11,7 +11,11 @@
     "mockwave": "src/index.js"
   },
   "scripts": {},
-  "keywords": ["fastify", "mock", "proxy"],
+  "keywords": [
+    "fastify",
+    "mock",
+    "proxy"
+  ],
   "author": "Joe Attardi <jattardi@gmail.com>",
   "repository": "github:joeattardi/mockwave",
   "bugs": "https://github.com/joeattardi/mockwave/issues",
