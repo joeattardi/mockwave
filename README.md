@@ -6,6 +6,8 @@ Mockwave lets you create mock API endpoints while seamlessly proxying all other 
 
 While you wait for the API team to implement the new APIs you need for your UI development, you can create temporary endpoints that return mock or test data.
 
+Mockwave is still in an early stage. I hope you find it useful but please feel free to open feature requests!
+
 ## Getting started
 
 Install Mockwave in your project:
@@ -24,7 +26,7 @@ The file should have a default export which is a function. The function takes on
 
 See the [Fastify documentation](https://fastify.dev/docs/latest/Reference/Routes/) for more details on adding routes.
 
-## Example
+### Example
 
 Here is an example mock file:
 
@@ -37,6 +39,10 @@ export default function myMock(app) {
     });
 }
 ```
+
+### Using multiple mock files
+
+You can split up your mocks into multiple `.mock.js` files. Just specify them as a space-separated list on the command line when you run Mockwave.
 
 ## Running Mockwave
 
@@ -55,3 +61,5 @@ npx mockwave -t https://httpbin.org myMock.mock.js
 ```
 
 By default, Mockwave listens on port 8000. If you need a different port, you can specify the `-p` option and enter a different port number.
+
+Now, when you send a request to http://localhost:8000, if it matches one of your mock routes, your mock will handle it. Otherwise, the request will be proxied to https://httpbin.org.
