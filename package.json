@@ -1,6 +1,6 @@
 {
   "name": "mockwave",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "API proxy with mocking support",
   "engines": {
     "node": ">=20.6.0"
