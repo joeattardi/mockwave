@@ -11,8 +11,10 @@
     "mockwave": "src/index.js"
   },
   "scripts": {},
-  "keywords": [],
+  "keywords": ["fastify", "mock", "proxy"],
   "author": "Joe Attardi <jattardi@gmail.com>",
+  "repository": "github:joeattardi/mockwave",
+  "bugs": "https://github.com/joeattardi/mockwave/issues",
   "license": "ISC",
   "devDependencies": {
     "@types/figlet": "^1.7.0",
